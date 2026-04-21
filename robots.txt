@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /mentions.html
+Disallow: /confidentialite.html
+
+Sitemap: https://massage-evasion.paris/sitemap.xml

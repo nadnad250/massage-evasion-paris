@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr" data-palette="sage" data-typo="editorial" data-btn="pill">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#FBF8F3" />
+<title>L'Institut · Massage Évasion Paris — Maison de bien-être · 8ᵉ arrondissement</title>
+<meta name="description" content="Découvrez l'Institut Massage Évasion Paris : une maison pensée comme un cocon depuis 2019, à deux pas du parc Monceau. Praticiens diplômés, huiles bio, cabines feutrées." />
+<meta name="keywords" content="institut massage Paris, bien-être Paris 8, cabinet massage, praticiens diplômés, soin bio" />
+<meta name="author" content="Massage Évasion Paris" />
+<link rel="canonical" href="https://massage-evasion.paris/institut.html" />
+<link rel="alternate" hreflang="fr" href="https://massage-evasion.paris/institut.html" />
+<link rel="alternate" hreflang="en" href="https://massage-evasion.paris/institut.html?lang=en" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://massage-evasion.paris/institut.html" />
+<meta property="og:title" content="L'Institut · Massage Évasion Paris" />
+<meta property="og:description" content="Une maison pensée comme un cocon, à deux pas du parc Monceau. Découvrez notre histoire, notre équipe et nos valeurs." />
+<meta property="og:image" content="https://massage-evasion.paris/assets/images/og-cover.jpg" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="L'Institut · Massage Évasion Paris" />
+<meta name="twitter:description" content="Une maison pensée comme un cocon, à deux pas du parc Monceau." />
+<meta name="twitter:image" content="https://massage-evasion.paris/assets/images/og-cover.jpg" />
+
+<!-- Manifest & Icons -->
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@300;400;500;600&display=swap" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="assets/css/variables.css" />
+<link rel="stylesheet" href="assets/css/reset.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/layout.css" />
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Massage Évasion Paris",
+  "description": "Institut de massage bien-être fondé en 2019 à Paris 8ᵉ, à deux pas du parc Monceau. Praticiens diplômés, huiles bio, cabines feutrées.",
+  "image": "https://massage-evasion.paris/assets/images/og-cover.jpg",
+  "url": "https://massage-evasion.paris",
+  "telephone": "+33 1 42 25 18 90",
+  "priceRange": "€€",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12 rue de Penthièvre",
+    "addressLocality": "Paris",
+    "postalCode": "75008",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 48.8736, "longitude": 2.3137 },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "10:00", "closes": "22:00"
+  }],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127" },
+  "founder": { "@type": "Person", "name": "Léa Marchetti" },
+  "sameAs": ["https://www.instagram.com/massage.evasion.paris"]
+}
+</script>
+
+<style>
+/* Styles spécifiques à la page Institut */
+.gallery-grid figure {
+  position: relative;
+  overflow: hidden;
+  background: var(--sand-200);
+  margin: 0;
+}
+.gallery-grid figure.tall { grid-row: span 2; }
+.gallery-grid figure img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s var(--ease-out);
+}
+.gallery-grid figure:hover img { transform: scale(1.05); }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+@media (max-width: 1000px) { .team-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .team-grid { grid-template-columns: 1fr; } }
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(90,101,80,.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skip">Aller au contenu</a>
+
+<!-- ============== NAV ============== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand" aria-label="Massage Évasion Paris — Accueil">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4c-4 6-4 12 0 18M16 4c4 6 4 12 0 18M16 22v6M10 28h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+      </span>
+      <span>Massage <em>Évasion</em></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="prestations.html" data-i18n="nav.presta">Prestations</a>
+      <a href="institut.html" aria-current="page" data-i18n="nav.institut">Institut</a>
+      <a href="rituel.html" data-i18n="nav.rituel">Rituel</a>
+      <a href="tarifs.html" data-i18n="nav.tarifs">Tarifs</a>
+      <a href="avis.html" data-i18n="nav.avis">Avis</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div style="display:flex;gap:14px;align-items:center;">
+      <div class="lang" role="group" aria-label="Langue">
+        <button data-lang="fr" class="on" aria-pressed="true">FR</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a href="reservation.html" class="btn btn-primary btn-sm" data-i18n="nav.book">Réserver</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Menu mobile">
+    <a href="index.html" data-i18n="nav.home">Accueil</a>
+    <a href="prestations.html" data-i18n="nav.presta">Prestations</a>
+    <a href="institut.html" aria-current="page" data-i18n="nav.institut">Institut</a>
+    <a href="rituel.html" data-i18n="nav.rituel">Rituel</a>
+    <a href="tarifs.html" data-i18n="nav.tarifs">Tarifs</a>
+    <a href="avis.html" data-i18n="nav.avis">Avis</a>
+    <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+    <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    <a href="reservation.html" class="btn btn-primary nav-mobile-cta" data-i18n="nav.book">Réserver</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="page-hero-content">
+      <div>
+        <div class="section-label fade-up"><span class="under" data-i18n="inst.eyebrow">Notre maison</span></div>
+        <h1 class="fade-up d1" data-i18n="inst.h1">Un écrin pensé <em>pour s'évader.</em></h1>
+      </div>
+      <p class="page-hero-lead fade-up d2" data-i18n="inst.lead">Une maison pensée comme un cocon, à deux pas du parc Monceau. Ici, le temps se suspend, les sens s'apaisent et chaque détail a été choisi pour vous.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== À PROPOS ============== -->
+<section class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-image fade-up">
+        <img
+          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=900&q=80"
+          alt="Cabine de massage feutrée avec lumière dorée et table de soin enveloppante"
+          loading="lazy"
+          width="900"
+          height="1125"
+        />
+      </div>
+      <div class="about-content">
+        <div class="section-label fade-up"><span class="under" data-i18n="inst.about.label">Histoire</span></div>
+        <h2 class="fade-up d1" data-i18n="inst.about.title">L'<em>histoire</em> d'une maison</h2>
+        <p class="fade-up d2" data-i18n="inst.about.p1">
+          Massage Évasion est née en 2019 d'une conviction simple : le soin du corps mérite un écrin à sa hauteur. Léa Marchetti, praticienne diplômée en massage bien-être et ancienne thérapeute en spa de luxe, a imaginé un lieu qui rompt avec l'esthétique clinique des instituts classiques.
+        </p>
+        <p class="fade-up d2" data-i18n="inst.about.p2">
+          Nichée au cœur du 8ᵉ arrondissement, à quelques pas du parc Monceau, notre maison accueille chaque client comme un hôte précieux. Bois clair, lin naturel, senteurs d'eucalyptus et de bergamote — chaque sens est convié à l'évasion dès le seuil franchi.
+        </p>
+        <p class="fade-up d2" data-i18n="inst.about.p3">
+          Depuis 2019, plus de 1 240 soins ont été réalisés avec la même exigence : écouter, adapter, offrir un moment unique. Cette attention constante nous vaut un taux de fidélisation de 87 % et une note de 4,9/5 sur l'ensemble de nos plateformes.
+        </p>
+
+        <blockquote class="fade-up d3" data-i18n="inst.quote">
+          « J'ai voulu créer l'endroit où j'aurais aimé me réfugier moi-même. Un lieu qui prend soin du corps, mais aussi de l'âme. »
+          <footer style="margin-top:12px;font-family:var(--font-body);font-size:12px;font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);">— Léa Marchetti, fondatrice</footer>
+        </blockquote>
+
+        <div class="about-stats fade-up d4" role="list" aria-label="Chiffres clés">
+          <div class="rs-item" role="listitem">
+            <div class="rs-num" aria-label="7 ans d'expérience">7 ans</div>
+            <div class="rs-label" data-i18n="inst.stat1">D'expérience</div>
+          </div>
+          <div class="rs-item" role="listitem">
+            <div class="rs-num" aria-label="Plus de 1240 soins réalisés">1 240+</div>
+            <div class="rs-label" data-i18n="inst.stat2">Soins réalisés</div>
+          </div>
+          <div class="rs-item" role="listitem">
+            <div class="rs-num" aria-label="Note de 4,9 sur 5">4,9/5</div>
+            <div class="rs-label" data-i18n="inst.stat3">Note client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PILLIERS ============== -->
+<section class="section bg-soft">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <div class="section-label fade-up"><span class="under" data-i18n="inst.pillars.label">Nos engagements</span></div>
+        <h2 class="section-title fade-up d1" data-i18n="inst.pillars.title">
+          Ce qui nous <em>définit.</em>
+        </h2>
+      </div>
+      <p class="section-desc fade-up d2" data-i18n="inst.pillars.desc">
+        Quatre valeurs fondamentales guident chacun de nos gestes, de l'accueil jusqu'au dernier instant du soin.
+      </p>
+    </header>
+
+    <div class="pillars fade-up d2" role="list">
+
+      <article class="pillar" role="listitem">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 8c-5 4-8 10-8 16s3 10 8 12c5-2 8-6 8-12S27 12 22 8z"/>
+            <path d="M22 8v28M14 16h16M14 28h16"/>
+          </svg>
+        </div>
+        <h3 data-i18n="inst.p1.title">Praticiens diplômés</h3>
+        <p data-i18n="inst.p1.desc">Tous nos praticiens sont certifiés par des organismes reconnus et suivent des formations continues annuelles. Chaque geste est maîtrisé, chaque technique réfléchie.</p>
+      </article>
+
+      <article class="pillar" role="listitem">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="22" cy="22" rx="10" ry="14"/>
+            <path d="M12 22c0-4 4.5-7 10-7s10 3 10 7"/>
+            <circle cx="22" cy="12" r="2"/>
+            <path d="M16 32c1.5 2 3.5 3 6 3s4.5-1 6-3"/>
+          </svg>
+        </div>
+        <h3 data-i18n="inst.p2.title">Huiles 100 % bio</h3>
+        <p data-i18n="inst.p2.desc">Nous sélectionnons exclusivement des huiles végétales certifiées biologiques, pressées à froid et enrichies d'actifs naturels. Votre peau ne mérite que le meilleur.</p>
+      </article>
+
+      <article class="pillar" role="listitem">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="14" width="28" height="20" rx="3"/>
+            <path d="M16 14v-4a6 6 0 0 1 12 0v4"/>
+            <circle cx="22" cy="24" r="3"/>
+          </svg>
+        </div>
+        <h3 data-i18n="inst.p3.title">Cabines feutrées</h3>
+        <p data-i18n="inst.p3.desc">Trois cabines individuelles, insonorisées, chauffées et équipées de tables de massage professionnelles. Un univers sensoriel pensé pour une immersion totale.</p>
+      </article>
+
+      <article class="pillar" role="listitem">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10l3.5 7 7.5 1.1-5.5 5.3 1.3 7.6L22 27.5l-6.8 3.5 1.3-7.6L11 18.1l7.5-1.1z"/>
+            <path d="M22 36v-8.5"/>
+          </svg>
+        </div>
+        <h3 data-i18n="inst.p4.title">Confidentialité absolue</h3>
+        <p data-i18n="inst.p4.desc">Votre intimité est sacrée. Chaque cabine garantit une totale discrétion. Vos données personnelles ne sont jamais partagées, votre confiance est notre engagement premier.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== GALERIE ============== -->
+<section class="section">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <div class="section-label fade-up"><span class="under" data-i18n="inst.gal.label">L'espace</span></div>
+        <h2 class="section-title fade-up d1" data-i18n="inst.gal.title">
+          Quelques <em>instants</em> chez nous.
+        </h2>
+      </div>
+      <p class="section-desc fade-up d2" data-i18n="inst.gal.desc">
+        Bois clair, lin naturel, lumière tamisée. Un univers conçu pour que l'évasion commence dès l'entrée.
+      </p>
+    </header>
+
+    <div class="gallery-grid fade-up d2">
+      <figure class="tall">
+        <img
+          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80"
+          alt="Cabine principale — table de massage enveloppante et lumière dorée"
+          loading="lazy"
+          width="800"
+          height="1000"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"
+          alt="Espace de détente — coussin lin et plantes vertes"
+          loading="lazy"
+          width="800"
+          height="600"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1583416750470-965b2707b355?w=800&q=80"
+          alt="Hammam privatif — mosaïque et vapeur douce"
+          loading="lazy"
+          width="800"
+          height="600"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+          alt="Salon d'accueil — thé chaud et huiles essentielles"
+          loading="lazy"
+          width="800"
+          height="600"
+        />
+      </figure>
+      <figure class="tall" style="grid-column:3;grid-row:1/3;">
+        <img
+          src="https://images.unsplash.com/photo-1591343395082-e120087004b4?w=800&q=80"
+          alt="Détail bois clair et bougies — ambiance feutrée"
+          loading="lazy"
+          width="800"
+          height="1000"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ÉQUIPE ============== -->
+<section class="section bg-soft">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <div class="section-label fade-up"><span class="under" data-i18n="inst.team.label">Notre équipe</span></div>
+        <h2 class="section-title fade-up d1" data-i18n="inst.team.title">
+          Des <em>mains</em> expertes,<br/>des cœurs attentifs.
+        </h2>
+      </div>
+      <p class="section-desc fade-up d2" data-i18n="inst.team.desc">
+        Quatre praticiens passionnés, formés aux meilleures techniques et réunis par la même conviction : prendre soin, c'est écouter.
+      </p>
+    </header>
+
+    <div class="team-grid">
+
+      <article class="member fade-up">
+        <div class="member-photo">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80"
+            alt="Portrait de Léa Marchetti, fondatrice et praticienne"
+            loading="lazy"
+            width="600"
+            height="750"
+          />
+        </div>
+        <div class="member-body">
+          <h3 class="member-name" data-i18n="inst.m1.name">Léa Marchetti</h3>
+          <div class="member-role" data-i18n="inst.m1.role">Fondatrice · Massage suédois & Évasion Signature</div>
+          <p class="member-meta" data-i18n="inst.m1.meta">12 ans d'expérience · Diplômée FFMBE</p>
+          <p class="member-quote" data-i18n="inst.m1.quote">« Chaque soin est une conversation silencieuse. J'écoute le corps avant d'agir. »</p>
+        </div>
+      </article>
+
+      <article class="member fade-up d1">
+        <div class="member-photo">
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
+            alt="Portrait de Sofiane Benali, spécialiste deep tissue"
+            loading="lazy"
+            width="600"
+            height="750"
+          />
+        </div>
+        <div class="member-body">
+          <h3 class="member-name" data-i18n="inst.m2.name">Sofiane Benali</h3>
+          <div class="member-role" data-i18n="inst.m2.role">Deep Tissue & Sportif</div>
+          <p class="member-meta" data-i18n="inst.m2.meta">8 ans d'expérience · Ancien kinésithérapeute du sport</p>
+          <p class="member-quote" data-i18n="inst.m2.quote">« La tension musculaire est une mémoire du corps. Mon rôle est de l'aider à lâcher prise. »</p>
+        </div>
+      </article>
+
+      <article class="member fade-up d2">
+        <div class="member-photo">
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+            alt="Portrait de Camille Vernet, praticienne soins relaxants"
+            loading="lazy"
+            width="600"
+            height="750"
+          />
+        </div>
+        <div class="member-body">
+          <h3 class="member-name" data-i18n="inst.m3.name">Camille Vernet</h3>
+          <div class="member-role" data-i18n="inst.m3.role">Relaxant & Combiné sur-mesure</div>
+          <p class="member-meta" data-i18n="inst.m3.meta">6 ans d'expérience · Spécialiste aromathérapie</p>
+          <p class="member-quote" data-i18n="inst.m3.quote">« Je compose chaque soin comme une partition — chaque geste, chaque huile, chaque silence a sa place. »</p>
+        </div>
+      </article>
+
+      <article class="member fade-up d3">
+        <div class="member-photo">
+          <img
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80"
+            alt="Portrait d'Inès Dupont, praticienne soins duo et rituels"
+            loading="lazy"
+            width="600"
+            height="750"
+          />
+        </div>
+        <div class="member-body">
+          <h3 class="member-name" data-i18n="inst.m4.name">Inès Dupont</h3>
+          <div class="member-role" data-i18n="inst.m4.role">Duo & Rituel hammam</div>
+          <p class="member-meta" data-i18n="inst.m4.meta">5 ans d'expérience · Formée à Marrakech & Bali</p>
+          <p class="member-quote" data-i18n="inst.m4.quote">« Partager un soin à deux est l'un des plus beaux cadeaux que l'on puisse s'offrir. Je veille à ce que ce moment soit parfait. »</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA FINAL ============== -->
+<section class="section bg-ink">
+  <div class="wrap" style="text-align:center;max-width:720px;">
+    <div class="section-label fade-up"><span class="under" data-i18n="inst.cta.label">Votre moment</span></div>
+    <h2 class="section-title fade-up d1" style="margin-top:24px;" data-i18n="inst.cta.title">
+      Venez <em>nous rendre visite.</em>
+    </h2>
+    <p class="fade-up d2" style="margin:24px 0 36px;font-size:18px;line-height:1.7;" data-i18n="inst.cta.desc">
+      Réservez votre premier soin en quelques instants. Nos praticiens vous accueilleront avec toute l'attention que vous méritez.
+    </p>
+    <div class="fade-up d3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="reservation.html" class="btn btn-gold" data-i18n="nav.book">Réserver un soin</a>
+      <a href="prestations.html" class="btn btn-ghost" data-i18n="inst.cta.btn2">Découvrir nos soins →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <a href="index.html" class="brand" aria-label="Massage Évasion Paris — Accueil">
+          <span class="brand-mark"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4c-4 6-4 12 0 18M16 4c4 6 4 12 0 18M16 22v6M10 28h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg></span>
+          <span>Massage <em>Évasion</em></span>
+        </a>
+        <p class="footer-tag" data-i18n="foot.tag">Une maison de bien-être à Paris. Des mains, une intention, un instant.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/massage.evasion.paris" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Massage Évasion Paris">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook — Massage Évasion Paris">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="foot.navigate">Naviguer</h5>
+        <a href="prestations.html" data-i18n="nav.presta">Prestations</a>
+        <a href="institut.html" data-i18n="nav.institut">Institut</a>
+        <a href="rituel.html" data-i18n="nav.rituel">Rituel</a>
+        <a href="tarifs.html" data-i18n="nav.tarifs">Tarifs</a>
+        <a href="bon-cadeau.html" data-i18n="nav.bon">Bon cadeau</a>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="foot.contact">Contact</h5>
+        <a href="tel:+33142251890">+33 1 42 25 18 90</a>
+        <a href="mailto:contact@massage-evasion.paris">contact@massage-evasion.paris</a>
+        <a href="https://maps.google.com/?q=12+rue+Penthièvre+Paris" target="_blank" rel="noopener noreferrer">12 rue de Penthièvre, 75008 Paris</a>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="foot.legal">Mentions légales</h5>
+        <a href="mentions.html" data-i18n="foot.legal">Mentions légales</a>
+        <a href="confidentialite.html" data-i18n="foot.privacy">Confidentialité</a>
+        <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Massage Évasion Paris — <span data-i18n="foot.rights">Tous droits réservés</span></span>
+      <span>Site démo — Réalisation soignée</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== WHATSAPP FLOAT ============== -->
+<a href="https://wa.me/33142251890" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Nous contacter sur WhatsApp" title="Contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.9-2.9-1.5-4-3.5-.3-.5.3-.5.8-1.5.1-.2.1-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.2 4.5 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/><path d="M21 12a9 9 0 0 1-9 9c-1.6 0-3-.4-4.3-1.1L3 21l1.1-4.3A9 9 0 1 1 21 12z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+</a>
+
+<!-- ============== BACK TO TOP ============== -->
+<button class="back-top" aria-label="Retour en haut de page">↑</button>
+
+<!-- Scripts -->
+<script src="assets/js/i18n.js" defer></script>
+<script src="assets/js/modal.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+
+</body>
+</html>

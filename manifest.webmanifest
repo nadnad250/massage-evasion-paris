@@ -1,0 +1,14 @@
+{
+  "name": "Massage Évasion Paris",
+  "short_name": "Évasion",
+  "description": "Maison de bien-être à Paris 8ᵉ. Soins personnalisés.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF8F3",
+  "theme_color": "#5A6550",
+  "lang": "fr-FR",
+  "scope": "/",
+  "icons": [
+    { "src": "assets/images/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

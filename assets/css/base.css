@@ -1,0 +1,272 @@
+/* ============================================================
+   BASE — Massage Évasion Paris
+   Typographie de base, conteneurs, utilitaires
+   ============================================================ */
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  font-weight: 300;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-feature-settings: "kern", "liga", "calt", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mesh décoratif global — gradients radiaux ultra-subtils */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--grad-mesh);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+body > * { position: relative; z-index: 1; }
+
+main { flex: 1 0 auto; }
+
+/* Sélection texte signature */
+::selection { background: var(--gold); color: #fff; }
+::-moz-selection { background: var(--gold); color: #fff; }
+
+a {
+  color: inherit;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+/* === CONTENEUR === */
+.wrap {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+  width: 100%;
+}
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px; }
+}
+
+/* === TYPOGRAPHIE === */
+.display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+}
+
+.italic {
+  font-family: var(--font-italic);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* === SECTION === */
+section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+@media (max-width: 720px) {
+  section { padding: var(--space-20) 0; }
+}
+
+/* === SECTION HEAD === */
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  margin-bottom: var(--space-20);
+  align-items: end;
+}
+@media (max-width: 860px) {
+  .section-head { grid-template-columns: 1fr; gap: var(--space-6); margin-bottom: var(--space-12); }
+}
+
+.section-label {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.section-label .num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-base);
+  color: var(--ink-soft);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: var(--fs-4xl);
+  line-height: 1.08;
+  letter-spacing: var(--tracking-snug);
+  margin: var(--space-4) 0 0;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.section-title em {
+  font-family: var(--font-italic);
+  color: var(--accent);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.section-desc {
+  font-size: var(--fs-md);
+  color: var(--ink-soft);
+  max-width: 520px;
+  line-height: 1.8;
+}
+
+/* === EYEBROW === */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: var(--space-6);
+}
+.eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* === SOULIGNEMENT DORE === */
+.under {
+  position: relative;
+  display: inline-block;
+}
+.under::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .7;
+}
+
+/* === SKIP LINK ACCESSIBILITE === */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 8px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 10px 16px;
+  z-index: 9999;
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  transition: top var(--duration-fast) var(--ease-out);
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* === UTILITAIRES === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center { text-align: center; }
+.text-accent { color: var(--accent); }
+.text-gold   { color: var(--gold); }
+.text-soft   { color: var(--ink-soft); }
+
+.hidden  { display: none !important; }
+.no-wrap { white-space: nowrap; }
+
+/* === BREADCRUMB === */
+.breadcrumb {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 120px 0 0;
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb .sep { color: var(--ink-muted); }
+.breadcrumb [aria-current="page"] { color: var(--ink); font-weight: 500; }
+
+/* === ANIMATIONS DE BASE === */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slower) var(--ease-out),
+              transform var(--duration-slower) var(--ease-out);
+}
+.fade-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up.d1 { transition-delay: .1s; }
+.fade-up.d2 { transition-delay: .2s; }
+.fade-up.d3 { transition-delay: .35s; }
+.fade-up.d4 { transition-delay: .5s; }
+.fade-up.d5 { transition-delay: .65s; }
+
+/* === KENBURNS === */
+@keyframes slow-zoom {
+  to { transform: scale(1); }
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: .5; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes pop {
+  from { transform: scale(.3); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scroll-anim {
+  0%, 100% { transform: scaleY(.3); transform-origin: top; }
+  50%      { transform: scaleY(1);  transform-origin: top; }
+}
