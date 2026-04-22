@@ -15,8 +15,14 @@
   transition: all .5s var(--ease-out);
   background: transparent;
 }
+/* Voile permanent SOUS la nav sur hero sombre — assure la lisibilité */
+.nav.on-dark {
+  background: linear-gradient(180deg, rgba(10,5,3,.55) 0%, rgba(10,5,3,.25) 70%, transparent 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
 .nav.scrolled {
-  background: rgba(251, 248, 243, 0.88);
+  background: rgba(250, 241, 224, 0.92);
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border-bottom: 1px solid var(--line);
@@ -836,11 +842,11 @@ footer {
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
-  place-items: center;
+  place-items: end center;     /* pousse le contenu vers le bas */
   overflow: hidden;
   isolation: isolate;
-  margin-top: -112px;      /* compense nav utility + nav main */
-  padding: 140px 0 80px;
+  margin-top: -112px;          /* compense nav utility + nav main */
+  padding: 220px 0 100px;      /* bcp d'air en haut pour ne pas chevaucher la nav */
   color: #FBF7F0;
 }
 .hero-cine-video {
@@ -912,25 +918,30 @@ footer {
 .hero-cine-title {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: clamp(48px, 8vw, 124px);
-  line-height: 0.96;
+  font-size: clamp(44px, 7vw, 108px);
+  line-height: 1;
   letter-spacing: -0.025em;
   margin: 0;
-  color: #FFF8E8;
-  text-shadow: 0 2px 40px rgba(0,0,0,0.35);
+  color: #FFF4DC;
+  text-shadow:
+    0 2px 4px rgba(0,0,0,.5),
+    0 8px 28px rgba(0,0,0,.45),
+    0 0 60px rgba(229,172,78,.18);
 }
 .hero-cine-title .line {
   display: block;
+  transform: translateZ(0);
 }
 .hero-cine-title .italic {
   font-family: var(--font-italic);
   font-style: italic;
   font-weight: 300;
-  background: linear-gradient(135deg, #F0E0B8 0%, #E5CC8C 50%, #D4B26A 100%);
+  background: linear-gradient(135deg, #FFE7B8 0%, #F5CC7A 40%, #E5AC4E 70%, #C68A2E 100%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  filter: drop-shadow(0 4px 24px rgba(229,172,78,.35));
 }
 
 .hero-cine-lead {
@@ -1022,3 +1033,72 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .hero-cine-video { animation: none; transform: none; }
 }
+
+/* ============================================================
+   EFFETS 3D — Tilt cards, parallax, depth
+   ============================================================ */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform .4s var(--ease-out);
+  will-change: transform;
+}
+.tilt-3d > * {
+  transform: translateZ(20px);
+}
+.tilt-3d .tilt-deep { transform: translateZ(40px); }
+.tilt-3d .tilt-back { transform: translateZ(-10px); }
+
+.presta-grid {
+  perspective: 1200px;
+  perspective-origin: 50% 30%;
+}
+
+/* Effet brillance sur les cartes presta */
+.presta-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.presta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 231, 184, 0.12) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 1.2s var(--ease-out);
+  pointer-events: none;
+  z-index: 1;
+}
+.presta-card:hover::after {
+  transform: translateX(100%);
+}
+.presta-card .presta-img {
+  overflow: hidden;
+}
+.presta-card .presta-img img {
+  transition: transform 1.2s var(--ease-out), filter .6s ease;
+}
+.presta-card:hover .presta-img img {
+  transform: scale(1.08);
+  filter: brightness(1.05) saturate(1.1);
+}
+
+/* Glow doré ambient sur les sections sombres */
+.bg-ink {
+  position: relative;
+}
+.bg-ink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 30% 50%, rgba(229,172,78,.15) 0%, transparent 60%),
+              radial-gradient(ellipse 50% 70% at 80% 20%, rgba(245,204,122,.10) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+.bg-ink > * { position: relative; z-index: 1; }
