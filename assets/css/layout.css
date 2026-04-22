@@ -918,6 +918,21 @@ footer {
   align-items: center;
   gap: 28px;
 }
+/* Halo sombre derriere le bloc texte — boost contraste sur zones claires (fleurs, bougies) */
+.hero-cine-inner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 95%);
+  height: 78%;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 50%, rgba(15,12,9,.62) 0%, rgba(15,12,9,.42) 35%, rgba(15,12,9,.18) 65%, transparent 100%);
+  filter: blur(18px);
+  pointer-events: none;
+}
 
 .hero-cine-eyebrow {
   display: inline-flex;
@@ -958,12 +973,17 @@ footer {
   font-family: var(--font-italic);
   font-style: italic;
   font-weight: 300;
-  background: linear-gradient(135deg, #FFE7B8 0%, #F5CC7A 40%, #E5AC4E 70%, #C68A2E 100%);
+  background: linear-gradient(135deg, #FFEFC8 0%, #FAD58A 40%, #EBB658 70%, #CE942F 100%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  filter: drop-shadow(0 4px 24px rgba(229,172,78,.35));
+  /* Triple drop-shadow : noir profond + halo or + glow doux pour rester lisible sur fleurs claires */
+  filter:
+    drop-shadow(0 1px 1px rgba(0,0,0,.85))
+    drop-shadow(0 3px 8px rgba(0,0,0,.7))
+    drop-shadow(0 0 24px rgba(0,0,0,.45))
+    drop-shadow(0 4px 28px rgba(229,172,78,.32));
 }
 
 .hero-cine-lead {
