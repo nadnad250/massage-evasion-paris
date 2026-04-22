@@ -126,44 +126,53 @@
 
 <main id="main">
 
-<!-- ============== HERO ============== -->
-<section class="hero">
-  <div class="hero-text">
-    <div class="eyebrow fade-up" data-i18n="hero.eyebrow">Massage bien-être · Paris 8ᵉ</div>
-    <h1 class="fade-up d1">
-      <span data-i18n="hero.h1a">Votre parenthèse</span><br />
-      <span class="italic" data-i18n="hero.h1b">de sérénité</span><br />
-      <span data-i18n="hero.h1c">au cœur de Paris.</span>
+<!-- ============== HERO CINEMATIC ============== -->
+<section class="hero-cine" aria-label="Hero cinématique">
+  <video class="hero-cine-video"
+         autoplay muted loop playsinline preload="auto"
+         poster="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1600&q=80"
+         aria-hidden="true">
+    <source src="assets/video/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-cine-veil" aria-hidden="true"></div>
+  <div class="hero-cine-grain" aria-hidden="true"></div>
+
+  <div class="hero-cine-inner">
+    <div class="hero-cine-eyebrow fade-up" data-i18n="hero.eyebrow">
+      <span class="hairline"></span>
+      <span>Maison de bien-être · Paris 8ᵉ · depuis 2019</span>
+      <span class="hairline"></span>
+    </div>
+
+    <h1 class="hero-cine-title fade-up d1">
+      <span class="line" data-i18n="hero.h1a">Le luxe</span>
+      <span class="line italic" data-i18n="hero.h1b">d'un instant</span>
+      <span class="line" data-i18n="hero.h1c">suspendu.</span>
     </h1>
-    <p class="hero-lead fade-up d2" data-i18n="hero.lead">
-      Un moment suspendu pour apaiser le corps et l'esprit. Des soins personnalisés, une ambiance feutrée, des mains expertes — à domicile ou en institut.
+
+    <p class="hero-cine-lead fade-up d2" data-i18n="hero.lead">
+      Soins personnalisés, mains expertes, atmosphère feutrée.
+      Une parenthèse hors du temps, à l'institut ou à domicile.
     </p>
-    <div class="hero-ctas fade-up d3">
-      <a href="reservation.html" class="btn btn-primary" data-i18n="hero.cta1">Réserver un soin</a>
-      <a href="prestations.html" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir les soins →</a>
+
+    <div class="hero-cine-ctas fade-up d3">
+      <a href="reservation.html" class="btn btn-gold" data-i18n="hero.cta1">Réserver un soin</a>
+      <a href="prestations.html" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir les rituels →</a>
     </div>
-    <div class="hero-meta fade-up d4">
+
+    <div class="hero-cine-meta fade-up d4">
       <div><span data-i18n="hero.m1l">Ouvert</span><strong data-i18n="hero.m1v">7j/7 · 10h — 22h</strong></div>
-      <div><span data-i18n="hero.m2l">Localisation</span><strong data-i18n="hero.m2v">8ᵉ arrondissement</strong></div>
-      <div><span data-i18n="hero.m3l">Dès</span><strong data-i18n="hero.m3v">soin d'1h</strong></div>
+      <span class="dot" aria-hidden="true">·</span>
+      <div><span data-i18n="hero.m2l">Adresse</span><strong data-i18n="hero.m2v">12 rue de Penthièvre, 75008</strong></div>
+      <span class="dot" aria-hidden="true">·</span>
+      <div><span data-i18n="hero.m3l">Note</span><strong data-i18n="hero.m3v">★ 4,9 / 5 · 127 avis</strong></div>
     </div>
   </div>
 
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80" alt="Cabine de massage feutrée avec lumière tamisée" loading="eager" />
-    <div class="hero-badge">
-      « Plus qu'un soin, une véritable parenthèse. »
-      <small>Marie L. · Cliente fidèle</small>
-    </div>
-    <svg class="hero-rotator" viewBox="0 0 200 200" aria-hidden="true">
-      <defs><path id="circle-text" d="M 100,100 m -75,0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/></defs>
-      <text fill="currentColor" font-family="Fraunces" font-size="11" letter-spacing="3">
-        <textPath href="#circle-text">MASSAGE · ÉVASION · PARIS · 2019 · </textPath>
-      </text>
-    </svg>
-  </div>
-
-  <a href="#prestations" class="scroll-indicator" aria-label="Découvrir"><span data-i18n="hero.scroll">Découvrir</span></a>
+  <a href="#prestations" class="hero-cine-scroll" aria-label="Découvrir">
+    <span data-i18n="hero.scroll">Découvrir</span>
+    <svg viewBox="0 0 24 40" fill="none" aria-hidden="true"><rect x="1" y="1" width="22" height="38" rx="11" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="10" r="2.4" fill="currentColor"><animate attributeName="cy" values="10;26;10" dur="2.4s" repeatCount="indefinite"/></circle></svg>
+  </a>
 </section>
 
 <!-- ============== PRESTATIONS ============== -->
