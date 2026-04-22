@@ -163,6 +163,87 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ============================================================
+  // STATS COUNTER — count-up cinematique au scroll
+  // Attributs attendus sur .rs-num :
+  //   data-target="4.9"        (obligatoire)
+  //   data-decimals="1"        (optionnel — nombre de decimales)
+  //   data-decimal-sep=","     (optionnel — separateur decimal, defaut ".")
+  //   data-thousand-sep=" "    (optionnel — separateur de milliers)
+  //   data-suffix="%"          (optionnel — suffixe injecte dans le texte)
+  // Le chiffre est injecte dans <span class="rs-num-value"></span>
+  // ============================================================
+  function formatNumber(value, el) {
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const decSep = el.dataset.decimalSep || '.';
+    const thoSep = el.dataset.thousandSep || '';
+    let str = decimals > 0 ? value.toFixed(decimals) : String(Math.floor(value));
+    // separer partie entiere / decimale
+    const parts = str.split('.');
+    if (thoSep) {
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thoSep);
+    }
+    return parts.join(decSep);
+  }
+
+  function animateCount(el, duration) {
+    const target = parseFloat(el.dataset.target);
+    if (isNaN(target)) return;
+    const valueEl = el.querySelector('.rs-num-value') || el;
+    const start = performance.now();
+    // easeOutCubic — editorial, pas mecanique
+    const easing = t => 1 - Math.pow(1 - t, 3);
+    function tick(now) {
+      const elapsed = now - start;
+      const p = Math.min(elapsed / duration, 1);
+      const current = target * easing(p);
+      valueEl.textContent = formatNumber(current, el);
+      if (p < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        // Valeur finale exacte
+        valueEl.textContent = formatNumber(target, el);
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function initStatsCounter() {
+    const blocks = document.querySelectorAll('.stats-counter, .reviews-summary, .about-stats');
+    if (!blocks.length) return;
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      // Fallback : affiche la valeur finale sans animation
+      blocks.forEach(block => {
+        block.classList.add('is-visible');
+        block.querySelectorAll('.rs-num[data-target]').forEach(el => {
+          const valueEl = el.querySelector('.rs-num-value') || el;
+          const target = parseFloat(el.dataset.target);
+          if (!isNaN(target)) valueEl.textContent = formatNumber(target, el);
+        });
+      });
+      return;
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const block = entry.target;
+        block.classList.add('is-visible');
+        const items = block.querySelectorAll('.rs-num[data-target]');
+        items.forEach((el, i) => {
+          // Stagger 180ms, duration 1800ms (ease-out cubic)
+          setTimeout(() => animateCount(el, 1800), 180 * i + 120);
+        });
+        io.unobserve(block);
+      });
+    }, { threshold: 0.25, rootMargin: '0px 0px -5% 0px' });
+
+    blocks.forEach(b => io.observe(b));
+  }
+
+  initStatsCounter();
+
+  // ============================================================
   // PARALLAX hero subtil au scroll
   // ============================================================
   const heroVideo = document.querySelector('.hero-cine-video');

@@ -337,7 +337,19 @@ window.AUTO_FR_EN = {
   "Premium": "Premium",
   "Hammam": "Hammam",
   "Stress": "Stress",
-  "Drainage": "Drainage"
+  "Drainage": "Drainage",
+
+  // Stats counter
+  "ans": "yrs",
+  "Note Google": "Google rating",
+  "Note moyenne": "Average rating",
+  "Note client": "Client rating",
+  "Soins réalisés": "Treatments given",
+  "Clients fidélisés": "Returning clients",
+  "D'expérience": "Years",
+  "Avis vérifiés": "Verified reviews",
+  "Reviennent": "Come back",
+  "Recommandent": "Recommend"
 };
 
 /* ============================================================
@@ -350,7 +362,7 @@ window.AUTO_FR_EN = {
 
   // Selecteurs a ignorer (pas de traduction)
   const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'CODE', 'PRE', 'TEXTAREA']);
-  const SKIP_CLASS = ['lang', 'brand-mark', 'wa-float', 'back-top'];
+  const SKIP_CLASS = ['lang', 'brand-mark', 'wa-float', 'back-top', 'rs-num-value'];
 
   function shouldSkip(node) {
     let p = node.parentNode;

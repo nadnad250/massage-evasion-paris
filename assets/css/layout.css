@@ -718,12 +718,32 @@ html[data-palette="noir"] .lang { background: rgba(255, 255, 255, 0.04); }
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  gap: 0;
   margin-top: var(--space-10);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--line);
+  padding: var(--space-8) 0;
+  position: relative;
+  border-top: 1px solid rgba(198, 138, 46, .18);
+  border-bottom: 1px solid rgba(198, 138, 46, .18);
 }
-.about-stats .rs-num { font-size: 36px; }
+.about-stats::before,
+.about-stats::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(198, 138, 46, .5), transparent);
+  pointer-events: none;
+}
+.about-stats::before { top: -1px; }
+.about-stats::after  { bottom: -1px; }
+.about-stats .rs-num { font-size: clamp(42px, 4.2vw, 56px); }
+.about-stats .rs-num small { font-size: .38em; }
+.about-stats .rs-label { margin-top: 18px; font-size: 10px; letter-spacing: .24em; }
+@media (max-width: 720px) {
+  .about-stats { grid-template-columns: 1fr 1fr; gap: 32px 0; }
+  .about-stats .rs-item:nth-child(2)::after { display: none; }
+}
 
 /* ============================================================
    BOOKING LAYOUT
