@@ -842,12 +842,13 @@ footer {
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
-  place-items: end center;     /* pousse le contenu vers le bas */
+  place-items: center;
   overflow: hidden;
   isolation: isolate;
   margin-top: -112px;          /* compense nav utility + nav main */
-  padding: 220px 0 100px;      /* bcp d'air en haut pour ne pas chevaucher la nav */
+  padding: 200px 0 140px;      /* marge haute garantie sous la nav */
   color: #FBF7F0;
+  background: #0A0503;         /* fond noir si video pas chargee */
 }
 .hero-cine-video {
   position: absolute;
@@ -918,9 +919,9 @@ footer {
 .hero-cine-title {
   font-family: var(--font-display);
   font-weight: 300;
-  font-size: clamp(44px, 7vw, 108px);
-  line-height: 1;
-  letter-spacing: -0.025em;
+  font-size: clamp(38px, 5.2vw, 78px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
   margin: 0;
   color: #FFF4DC;
   text-shadow:
@@ -1023,11 +1024,8 @@ footer {
 }
 
 @media (max-width: 720px) {
-  .hero-cine { padding: 100px 0 100px; }
-  .hero-cine-title { font-size: clamp(40px, 11vw, 64px); }
-  .hero-cine-meta { font-size: 10px; gap: 8px 12px; }
-  .hero-cine-meta strong { font-size: 12px; }
-  .hero-cine-meta .dot { display: none; }
+  .hero-cine { padding: 140px 0 100px; margin-top: -80px; }
+  .hero-cine-title { font-size: clamp(32px, 8vw, 52px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
