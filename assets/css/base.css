@@ -19,7 +19,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
 }
+
+/* Sur les pages avec hero sombre : fond body sombre pour eviter
+   tout flash creme avant le chargement / sous une nav transparente */
+html.has-hero-dark { background: #0A0503; }
+html.has-hero-dark body { background: #0A0503; }
+html.has-hero-dark body::before { display: none; }
 
 /* Mesh décoratif global — gradients radiaux ultra-subtils */
 body::before {

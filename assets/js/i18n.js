@@ -37,19 +37,12 @@ window.STRINGS = {
     "foot.cgu": "CGV",
 
     // Hero
-    "hero.eyebrow": "Massage bien-être · Paris 8ᵉ",
-    "hero.h1a": "Votre parenthèse",
-    "hero.h1b": "de sérénité",
-    "hero.h1c": "au cœur de Paris.",
-    "hero.lead": "Un moment suspendu pour apaiser le corps et l'esprit. Des soins personnalisés, une ambiance feutrée, des mains expertes — à domicile ou en institut.",
+    "hero.h1a": "Le luxe",
+    "hero.h1b": "d'un instant suspendu.",
+    "hero.lead": "Soins personnalisés, mains expertes — une parenthèse hors du temps.",
     "hero.cta1": "Réserver un soin",
-    "hero.cta2": "Découvrir les soins →",
-    "hero.m1l": "Ouvert",
-    "hero.m1v": "7j/7 · 10h — 22h",
-    "hero.m2l": "Localisation",
-    "hero.m2v": "8ᵉ arrondissement",
-    "hero.m3l": "Dès",
-    "hero.m3v": "soin d'1h",
+    "hero.cta2": "Découvrir →",
+    "hero.scroll": "Découvrir",
     "hero.scroll": "Découvrir",
 
     // Prestations (presta cards courtes)

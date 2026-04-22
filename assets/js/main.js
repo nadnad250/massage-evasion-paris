@@ -13,7 +13,10 @@
   if (nav) {
     // Nav sur hero sombre : applique classe si la page a un .hero-cine
     const heroCine = document.querySelector('.hero-cine');
-    if (heroCine) nav.classList.add('on-dark');
+    if (heroCine) {
+      nav.classList.add('on-dark');
+      document.documentElement.classList.add('has-hero-dark');
+    }
 
     let lastScroll = 0;
     let ticking = false;

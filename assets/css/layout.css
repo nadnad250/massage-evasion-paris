@@ -841,12 +841,13 @@ footer {
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   isolation: isolate;
-  margin-top: -112px;          /* compense nav utility + nav main */
-  padding: 200px 0 140px;      /* marge haute garantie sous la nav */
+  margin: 0;                   /* la nav est fixed, pas besoin de compenser */
+  padding: 160px 0 100px;      /* marge haute confortable sous la nav */
   color: #FBF7F0;
   background: #0A0503;         /* fond noir si video pas chargee */
 }
