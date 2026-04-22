@@ -1,0 +1,581 @@
+/* ============================================================
+   MOBILE.CSS — Optimisations mobile avancées
+   Techniques : dvh/svh, safe-area, container queries,
+   touch-targets ≥44px, sticky CTA, hover-only on hover devices
+   Charge APRÈS layout.css pour bien override
+   ============================================================ */
+
+/* ============================================================
+   1. ROOT — fluid type, viewport units modernes, tap highlight
+   ============================================================ */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --tap-target: 44px;             /* Apple HIG / WCAG 2.5.5 */
+  --mobile-gutter: clamp(16px, 4.5vw, 24px);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(184, 147, 64, 0.18);
+}
+
+body {
+  /* Empêche le scroll horizontal des animations qui débordent en mobile */
+  overflow-x: clip;
+  /* Smooth fonts */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Toutes les images responsives par défaut */
+img, video, svg, picture {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Désactiver hover sur écrans tactiles (évite les états collants) */
+@media (hover: none) {
+  *:hover { transition: none !important; }
+}
+
+/* ============================================================
+   2. INPUTS — empêche zoom iOS (font-size ≥ 16px)
+   ============================================================ */
+@media (max-width: 760px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="search"],
+  input[type="number"],
+  input[type="password"],
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="time"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* ============================================================
+   3. NAV — burger plus généreux, padding safe-area
+   ============================================================ */
+@media (max-width: 760px) {
+  .nav,
+  nav#nav {
+    padding-top: calc(12px + var(--safe-top));
+    padding-left: calc(var(--mobile-gutter) + var(--safe-left));
+    padding-right: calc(var(--mobile-gutter) + var(--safe-right));
+  }
+
+  .burger,
+  .nav .burger {
+    width: var(--tap-target);
+    height: var(--tap-target);
+    min-width: var(--tap-target);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Logo : taille adaptee, pas de troncature */
+  .brand,
+  .nav-brand,
+  .brand-mark {
+    font-size: clamp(17px, 4.4vw, 22px) !important;
+    white-space: nowrap;
+  }
+
+  /* Cache le bouton RESERVER desktop dans la nav (remplace par sticky CTA bas) */
+  .nav-cta,
+  .nav .btn-primary,
+  .nav-actions .btn-primary,
+  .nav-right .btn,
+  nav .btn-primary {
+    display: none !important;
+  }
+}
+
+/* Menu mobile plein écran avec safe-area */
+@media (max-width: 760px) {
+  .nav-mobile {
+    /* Use dynamic viewport height for mobile browsers (Safari URL bar) */
+    height: 100dvh;
+    height: 100svh; /* fallback small viewport */
+    padding-top: calc(80px + var(--safe-top));
+    padding-bottom: calc(40px + var(--safe-bottom));
+    padding-left: calc(var(--mobile-gutter) + var(--safe-left));
+    padding-right: calc(var(--mobile-gutter) + var(--safe-right));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-mobile a {
+    display: flex;
+    align-items: center;
+    min-height: var(--tap-target);
+    padding: 14px 8px;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(184,147,64,.15);
+  }
+}
+
+/* ============================================================
+   4. HERO — dvh, suppression parallax, hauteur écran réelle
+   ============================================================ */
+@media (max-width: 760px) {
+  .hero-cine {
+    /* dvh = dynamic viewport height (suit la barre d'URL Safari/Chrome mobile) */
+    min-height: 100dvh;
+    min-height: 100svh;
+    padding-top: calc(80px + var(--safe-top));
+    padding-bottom: calc(60px + var(--safe-bottom));
+    padding-left: calc(var(--mobile-gutter) + var(--safe-left));
+    padding-right: calc(var(--mobile-gutter) + var(--safe-right));
+  }
+
+  .hero-cine-inner {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .hero-cine-title {
+    font-size: clamp(34px, 9.5vw, 56px);
+    line-height: 1.05;
+  }
+
+  .hero-cine-lead {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+
+  /* CTAs mobile : pleine largeur, empilés */
+  .hero-cine-ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 10px;
+  }
+  .hero-cine-ctas .btn {
+    width: 100%;
+    min-height: var(--tap-target);
+  }
+
+  /* Désactive le zoom infini de la vidéo en mobile (perfs) */
+  .hero-cine-video {
+    animation: none !important;
+    transform: scale(1.4) !important;
+    transform-origin: center 60%;
+  }
+
+  /* Halo derrière le titre élargi sur mobile pour mieux contraster */
+  .hero-cine-inner::before {
+    width: 110%;
+    height: 70%;
+    filter: blur(14px);
+  }
+
+  .hero-cine-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+  }
+
+  .hero-cine-meta {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+  }
+
+  .hero-cine-scroll {
+    bottom: calc(20px + var(--safe-bottom));
+    font-size: 9px;
+    letter-spacing: 0.3em;
+  }
+}
+
+/* ============================================================
+   5. SECTIONS — gutters cohérents + spacing réduit mobile
+   ============================================================ */
+@media (max-width: 760px) {
+  .section,
+  section.section {
+    padding-top: clamp(48px, 12vw, 72px);
+    padding-bottom: clamp(48px, 12vw, 72px);
+  }
+
+  .wrap,
+  .container {
+    padding-left: calc(var(--mobile-gutter) + var(--safe-left));
+    padding-right: calc(var(--mobile-gutter) + var(--safe-right));
+  }
+
+  /* Section heads : empile titre/desc */
+  .section-head {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 7.4vw, 42px);
+    line-height: 1.1;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   6. PRESTA CARDS — image plus haute, padding réduit
+   ============================================================ */
+@media (max-width: 680px) {
+  .presta-grid:has(.presta-img) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .presta-card:has(.presta-img) .presta-body {
+    padding: 22px 20px 24px;
+    gap: 12px;
+  }
+
+  .presta-img { aspect-ratio: 16 / 11; }
+
+  .presta-num {
+    font-size: 36px;
+    top: 12px;
+    left: 14px;
+  }
+
+  .presta-img .presta-duration {
+    font-size: 10px;
+    padding: 6px 10px 6px 8px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .presta-headline h3 { font-size: 22px; }
+
+  .presta-features li { font-size: 13px; }
+
+  .presta-card:has(.presta-img) .presta-foot {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .presta-card:has(.presta-img) .presta-price { font-size: 28px; }
+
+  .presta-card:has(.presta-img) .btn {
+    min-height: var(--tap-target);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* ============================================================
+   7. STATS / REVIEWS-SUMMARY — 2x2 grid mobile
+   ============================================================ */
+@media (max-width: 760px) {
+  .reviews-summary,
+  .about-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 16px !important;
+    padding: 32px 16px !important;
+  }
+
+  .rs-num {
+    font-size: clamp(40px, 10vw, 56px) !important;
+  }
+
+  .rs-label {
+    font-size: 11px !important;
+    letter-spacing: 0.14em !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .reviews-summary,
+  .about-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px 10px !important;
+  }
+}
+
+/* ============================================================
+   8. REVIEWS — empile cartes
+   ============================================================ */
+@media (max-width: 760px) {
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .review {
+    padding: 24px 22px !important;
+  }
+}
+
+/* ============================================================
+   9. BOUTONS — touch-target garanti
+   ============================================================ */
+@media (max-width: 760px) {
+  .btn,
+  button.btn,
+  a.btn {
+    min-height: var(--tap-target);
+    padding-left: 22px;
+    padding-right: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-sm {
+    min-height: 40px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================================
+   10. FORMS — padding mobile
+   ============================================================ */
+@media (max-width: 760px) {
+  .form-group,
+  .field {
+    margin-bottom: 16px;
+  }
+
+  input, textarea, select {
+    padding: 14px 16px !important;
+    border-radius: 8px;
+  }
+
+  textarea { min-height: 120px; }
+
+  .booking-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ============================================================
+   11. STICKY MOBILE CTA — barre fixe en bas (réservation)
+   Apparaît seulement sur mobile, hors hero
+   ============================================================ */
+.sticky-mobile-cta {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .sticky-mobile-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding: 10px calc(var(--mobile-gutter) + var(--safe-left)) calc(10px + var(--safe-bottom)) calc(var(--mobile-gutter) + var(--safe-right));
+    background: rgba(20, 15, 10, 0.92);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+            backdrop-filter: blur(14px) saturate(140%);
+    border-top: 1px solid rgba(184, 147, 64, 0.32);
+    box-shadow: 0 -8px 28px -16px rgba(0, 0, 0, 0.4);
+    gap: 10px;
+    transform: translateY(120%);
+    transition: transform 0.45s var(--ease-out, cubic-bezier(.22,.61,.36,1));
+    pointer-events: none;
+  }
+
+  .sticky-mobile-cta.show {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .sticky-mobile-cta .btn {
+    flex: 1 1 auto;
+    min-height: 48px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+  }
+
+  .sticky-mobile-cta .sticky-call {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    background: rgba(229, 204, 140, 0.16);
+    border: 1px solid rgba(229, 204, 140, 0.45);
+    color: #FFE7B0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .sticky-mobile-cta .sticky-call svg { width: 20px; height: 20px; }
+
+  /* Pousse le footer pour pas que le CTA recouvre */
+  body { padding-bottom: 0; }
+
+  /* Cache le bouton WhatsApp flottant si sticky CTA visible (évite collision) */
+  .sticky-mobile-cta.show ~ .wa-float,
+  body:has(.sticky-mobile-cta.show) .wa-float {
+    bottom: calc(86px + var(--safe-bottom));
+  }
+}
+
+/* ============================================================
+   12. BACK-TOP — repositionne sur mobile pour pas chevaucher
+   ============================================================ */
+@media (max-width: 760px) {
+  .back-top {
+    bottom: calc(80px + var(--safe-bottom));
+    right: calc(16px + var(--safe-right));
+    width: 44px;
+    height: 44px;
+  }
+
+  .wa-float {
+    bottom: calc(20px + var(--safe-bottom));
+    right: calc(16px + var(--safe-right));
+  }
+}
+
+/* ============================================================
+   13. FAQ — touch-friendly accordéons
+   ============================================================ */
+@media (max-width: 760px) {
+  .faq-item summary,
+  .faq-question,
+  details > summary {
+    min-height: var(--tap-target);
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+}
+
+/* ============================================================
+   14. PRESTATIONS PAGE / RITUEL — grilles
+   ============================================================ */
+@media (max-width: 760px) {
+  .presta-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tarifs-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ============================================================
+   15. FOOTER — padding mobile
+   ============================================================ */
+@media (max-width: 760px) {
+  .footer {
+    padding-top: 48px;
+    padding-bottom: calc(80px + var(--safe-bottom)); /* place pour sticky CTA */
+    padding-left: calc(var(--mobile-gutter) + var(--safe-left));
+    padding-right: calc(var(--mobile-gutter) + var(--safe-right));
+  }
+
+  .footer-grid,
+  .footer-cols {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   16. PAGE-HERO (pages internes) — taille adaptée
+   ============================================================ */
+@media (max-width: 760px) {
+  .page-hero {
+    padding-top: calc(120px + var(--safe-top));
+    padding-bottom: 60px;
+  }
+
+  .page-hero h1,
+  .page-hero-title {
+    font-size: clamp(32px, 8.4vw, 48px);
+    line-height: 1.1;
+  }
+}
+
+/* ============================================================
+   17. ANIMATIONS — réduction sur mobile bas-de-gamme
+   ============================================================ */
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  /* Réduit la durée des transitions sur mobile (perçoit moins le smooth) */
+  .fade-up {
+    transition-duration: 0.6s;
+  }
+}
+
+/* prefers-reduced-data : économie de batterie/data */
+@media (prefers-reduced-data: reduce) {
+  .hero-cine-video {
+    display: none;
+  }
+  .hero-cine {
+    background: linear-gradient(180deg, #1a1410 0%, #2a1f15 100%);
+  }
+}
+
+/* ============================================================
+   18. SCROLL — comportement mobile + scroll-padding nav
+   ============================================================ */
+html {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+}
+
+/* Désactive smooth-scroll si reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================================
+   19. LANDSCAPE PHONE — hero compact
+   ============================================================ */
+@media (max-width: 920px) and (orientation: landscape) and (max-height: 500px) {
+  .hero-cine {
+    min-height: 100svh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .hero-cine-title { font-size: clamp(28px, 5vw, 40px); }
+  .hero-cine-lead { font-size: 14px; }
+  .hero-cine-scroll { display: none; }
+}
+
+/* ============================================================
+   20. PRINT — masque éléments interactifs
+   ============================================================ */
+@media print {
+  .nav, .nav-mobile, .burger, .wa-float, .back-top,
+  .sticky-mobile-cta, .hero-cine-video, .hero-cine-scroll {
+    display: none !important;
+  }
+}

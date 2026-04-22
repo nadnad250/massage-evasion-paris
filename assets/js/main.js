@@ -114,6 +114,34 @@
   }
 
   // ============================================================
+  // STICKY MOBILE CTA — apparait apres le hero, disparait pres du footer
+  // ============================================================
+  const stickyCta = document.querySelector('.sticky-mobile-cta');
+  if (stickyCta) {
+    const heroEl = document.querySelector('.hero-cine, .hero, .page-hero');
+    const footerEl = document.querySelector('.footer, footer');
+    let stickyTicking = false;
+    function updateSticky() {
+      const sy = window.scrollY;
+      const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom + sy : 400;
+      const footerTop = footerEl ? footerEl.getBoundingClientRect().top + sy : Infinity;
+      const viewportBottom = sy + window.innerHeight;
+      const past = sy > heroBottom - 100;
+      const beforeFooter = viewportBottom < footerTop + 200;
+      stickyCta.classList.toggle('show', past && beforeFooter);
+      stickyCta.setAttribute('aria-hidden', !(past && beforeFooter));
+      stickyTicking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!stickyTicking) {
+        requestAnimationFrame(updateSticky);
+        stickyTicking = true;
+      }
+    }, { passive: true });
+    updateSticky();
+  }
+
+  // ============================================================
   // BACK TO TOP
   // ============================================================
   const backTop = document.querySelector('.back-top');
