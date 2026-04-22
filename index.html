@@ -76,8 +76,29 @@
 
 <a href="#main" class="skip-link">Aller au contenu</a>
 
-<!-- ============== NAV ============== -->
+<!-- ============== NAV (2 rangées) ============== -->
 <header class="nav" id="nav">
+
+  <!-- Rangée 1 : utilitaire fine -->
+  <div class="nav-utility">
+    <div class="wrap nav-utility-inner">
+      <div class="nav-utility-left">
+        <span data-i18n="util.hours">7j/7 · 10h — 22h</span>
+        <span class="sep">·</span>
+        <span data-i18n="util.address">12 rue de Penthièvre, Paris 8ᵉ</span>
+      </div>
+      <div class="nav-utility-right">
+        <a href="bon-cadeau.html" data-i18n="util.gift">Bon cadeau</a>
+        <a href="faq.html" data-i18n="util.faq">FAQ</a>
+        <div class="lang" role="group" aria-label="Langue">
+          <button data-lang="fr" class="on" aria-pressed="true">FR</button>
+          <button data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rangée 2 : nav principale -->
   <div class="wrap nav-inner">
     <a href="index.html" class="brand" aria-label="Massage Évasion Paris">
       <span class="brand-mark" aria-hidden="true">
@@ -89,21 +110,15 @@
     </a>
 
     <nav class="nav-links" aria-label="Navigation principale">
-      <a href="index.html" data-i18n="nav.home">Accueil</a>
       <a href="prestations.html" data-i18n="nav.presta">Prestations</a>
       <a href="institut.html" data-i18n="nav.institut">Institut</a>
       <a href="rituel.html" data-i18n="nav.rituel">Rituel</a>
       <a href="tarifs.html" data-i18n="nav.tarifs">Tarifs</a>
       <a href="avis.html" data-i18n="nav.avis">Avis</a>
-      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
       <a href="contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <div style="display:flex;gap:14px;align-items:center;">
-      <div class="lang" role="group" aria-label="Langue">
-        <button data-lang="fr" class="on" aria-pressed="true">FR</button>
-        <button data-lang="en" aria-pressed="false">EN</button>
-      </div>
       <a href="reservation.html" class="btn btn-primary btn-sm" data-i18n="nav.book">Réserver</a>
       <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-mobile">
         <span></span><span></span><span></span>
@@ -139,34 +154,18 @@
   <div class="hero-cine-grain" aria-hidden="true"></div>
 
   <div class="hero-cine-inner">
-    <div class="hero-cine-eyebrow fade-up" data-i18n="hero.eyebrow">
-      <span class="hairline"></span>
-      <span>Maison de bien-être · Paris 8ᵉ · depuis 2019</span>
-      <span class="hairline"></span>
-    </div>
-
     <h1 class="hero-cine-title fade-up d1">
       <span class="line" data-i18n="hero.h1a">Le luxe</span>
-      <span class="line italic" data-i18n="hero.h1b">d'un instant</span>
-      <span class="line" data-i18n="hero.h1c">suspendu.</span>
+      <span class="line italic" data-i18n="hero.h1b">d'un instant suspendu.</span>
     </h1>
 
     <p class="hero-cine-lead fade-up d2" data-i18n="hero.lead">
-      Soins personnalisés, mains expertes, atmosphère feutrée.
-      Une parenthèse hors du temps, à l'institut ou à domicile.
+      Soins personnalisés, mains expertes — une parenthèse hors du temps.
     </p>
 
     <div class="hero-cine-ctas fade-up d3">
       <a href="reservation.html" class="btn btn-gold" data-i18n="hero.cta1">Réserver un soin</a>
-      <a href="prestations.html" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir les rituels →</a>
-    </div>
-
-    <div class="hero-cine-meta fade-up d4">
-      <div><span data-i18n="hero.m1l">Ouvert</span><strong data-i18n="hero.m1v">7j/7 · 10h — 22h</strong></div>
-      <span class="dot" aria-hidden="true">·</span>
-      <div><span data-i18n="hero.m2l">Adresse</span><strong data-i18n="hero.m2v">12 rue de Penthièvre, 75008</strong></div>
-      <span class="dot" aria-hidden="true">·</span>
-      <div><span data-i18n="hero.m3l">Note</span><strong data-i18n="hero.m3v">★ 4,9 / 5 · 127 avis</strong></div>
+      <a href="prestations.html" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir →</a>
     </div>
   </div>
 

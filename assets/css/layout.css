@@ -12,26 +12,77 @@
   left: 0;
   right: 0;
   z-index: var(--z-nav);
-  padding: 22px 0;
   transition: all .5s var(--ease-out);
   background: transparent;
 }
 .nav.scrolled {
-  background: rgba(251, 248, 243, 0.82);
+  background: rgba(251, 248, 243, 0.88);
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
-  padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
 html[data-palette="noir"] .nav.scrolled {
-  background: rgba(19, 18, 15, 0.82);
+  background: rgba(19, 18, 15, 0.85);
 }
 
+/* === Nav sur fond sombre (hero cinematique) === */
+.nav.on-dark .brand { color: #FBF7F0; }
+.nav.on-dark .brand-mark { color: #E5CC8C; }
+.nav.on-dark .nav-links a { color: rgba(251, 247, 240, 0.78); }
+.nav.on-dark .nav-links a:hover,
+.nav.on-dark .nav-links a[aria-current="page"] { color: #FFE7B0; }
+.nav.on-dark .nav-utility { color: rgba(251, 247, 240, 0.55); border-bottom-color: rgba(255,255,255,0.08); }
+.nav.on-dark .nav-utility a:hover { color: #FFE7B0; }
+.nav.on-dark .lang { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+.nav.on-dark .lang button { color: rgba(251, 247, 240, 0.72); }
+.nav.on-dark .lang button.on { background: #FFE7B0; color: #1A1714; }
+.nav.on-dark .burger { color: #FBF7F0; }
+
+/* === Rangée 1 : utilitaire === */
+.nav-utility {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 247, 232, 0.65);
+}
+.nav.scrolled .nav-utility {
+  border-bottom-color: rgba(0,0,0,0.06);
+  color: rgba(40, 36, 30, 0.62);
+}
+.nav-utility-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  gap: 24px;
+}
+.nav-utility-left,
+.nav-utility-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-utility .sep { opacity: 0.45; }
+.nav-utility a {
+  color: inherit;
+  transition: color .25s ease;
+}
+.nav-utility a:hover { color: var(--accent); }
+
+/* === Rangée 2 : nav principale === */
 .nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-6);
+  padding: 18px 0;
+  transition: padding .5s var(--ease-out);
+}
+.nav.scrolled .nav-inner { padding: 12px 0; }
+
+@media (max-width: 720px) {
+  .nav-utility { display: none; }
 }
 
 .brand {
@@ -788,8 +839,8 @@ footer {
   place-items: center;
   overflow: hidden;
   isolation: isolate;
-  margin-top: -88px;       /* compense le nav fixed */
-  padding: 120px 0 80px;
+  margin-top: -112px;      /* compense nav utility + nav main */
+  padding: 140px 0 80px;
   color: #FBF7F0;
 }
 .hero-cine-video {

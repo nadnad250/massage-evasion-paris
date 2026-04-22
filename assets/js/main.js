@@ -11,12 +11,21 @@
   // ============================================================
   const nav = document.getElementById('nav');
   if (nav) {
+    // Nav sur hero sombre : applique classe si la page a un .hero-cine
+    const heroCine = document.querySelector('.hero-cine');
+    if (heroCine) nav.classList.add('on-dark');
+
     let lastScroll = 0;
     let ticking = false;
 
     function onScroll() {
       const sy = window.scrollY;
-      nav.classList.toggle('scrolled', sy > 40);
+      const scrolled = sy > 40;
+      nav.classList.toggle('scrolled', scrolled);
+      // Retire on-dark dès qu'on scrolle (nav devient claire avec blur)
+      if (heroCine) {
+        nav.classList.toggle('on-dark', !scrolled);
+      }
       lastScroll = sy;
       ticking = false;
     }

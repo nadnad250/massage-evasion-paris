@@ -20,6 +20,12 @@ window.STRINGS = {
     "nav.gallery": "Galerie",
     "nav.reviews": "Avis",
 
+    // Utility bar
+    "util.hours": "7j/7 · 10h — 22h",
+    "util.address": "12 rue de Penthièvre, Paris 8ᵉ",
+    "util.gift": "Bon cadeau",
+    "util.faq": "FAQ",
+
     // Footer
     "foot.tag": "Une maison de bien-être à Paris. Des mains, une intention, un instant.",
     "foot.navigate": "Naviguer",
@@ -163,6 +169,10 @@ window.STRINGS = {
     "nav.bon": "Gift card",
     "nav.contact": "Contact",
     "nav.book": "Book",
+    "util.hours": "7 days · 10am — 10pm",
+    "util.address": "12 rue de Penthièvre, Paris 8th",
+    "util.gift": "Gift card",
+    "util.faq": "FAQ",
     "nav.menu": "Menu",
     "nav.close": "Close",
     "nav.gallery": "Gallery",
@@ -177,19 +187,11 @@ window.STRINGS = {
     "foot.rights": "All rights reserved",
     "foot.cgu": "T&Cs",
 
-    "hero.eyebrow": "Wellness maison · Paris 8th · since 2019",
     "hero.h1a": "The luxury",
-    "hero.h1b": "of one suspended",
-    "hero.h1c": "instant.",
-    "hero.lead": "Bespoke treatments, expert hands, a hushed atmosphere. A timeless parenthesis, at our maison or in your home.",
+    "hero.h1b": "of one suspended instant.",
+    "hero.lead": "Bespoke treatments, expert hands — a timeless parenthesis.",
     "hero.cta1": "Book a treatment",
-    "hero.cta2": "Discover the rituals →",
-    "hero.m1l": "Open",
-    "hero.m1v": "7 days · 10am — 10pm",
-    "hero.m2l": "Address",
-    "hero.m2v": "12 rue de Penthièvre, 75008",
-    "hero.m3l": "Rating",
-    "hero.m3v": "★ 4.9 / 5 · 127 reviews",
+    "hero.cta2": "Discover →",
     "hero.scroll": "Discover",
 
     "presta.label": "Services",
