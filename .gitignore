@@ -37,3 +37,4 @@ build/
 
 # Screenshots ad-hoc
 [a-f0-9]*-[a-f0-9]*-[a-f0-9]*-[a-f0-9]*-[a-f0-9]*.png
+output/

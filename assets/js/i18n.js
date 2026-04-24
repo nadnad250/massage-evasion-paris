@@ -37,12 +37,20 @@ window.STRINGS = {
     "foot.cgu": "CGV",
 
     // Hero
+    "hero.eyebrow": "Massage Évasion Paris",
     "hero.h1a": "Le luxe",
-    "hero.h1b": "d'un instant suspendu.",
+    "hero.h1b": "d'un instant",
+    "hero.h1c": "suspendu.",
     "hero.lead": "Soins personnalisés, mains expertes — une parenthèse hors du temps.",
     "hero.cta1": "Réserver un soin",
     "hero.cta2": "Découvrir →",
     "hero.scroll": "Découvrir",
+    "hero.meta1": "Paris 8ᵉ",
+    "hero.meta1b": "Institut & domicile",
+    "hero.meta2": "Ouvert",
+    "hero.meta2b": "7j/7 · 10h — 22h",
+    "hero.meta3": "Avis",
+    "hero.meta3b": "4,9/5 clients",
 
     // Prestations
     "presta.label": "Prestations",
@@ -59,7 +67,7 @@ window.STRINGS = {
     "p5.title": "Combiné sur-mesure", "p5.desc": "Vous choisissez l'intensité, les zones, les huiles. Nous composons le soin qui vous ressemble.", "p5.t1": "Personnalisé", "p5.t2": "Mix techniques",
     "p6.title": "Duo", "p6.desc": "Deux cabines communicantes, deux praticiens. Partagez l'évasion en duo, en couple ou entre amies.", "p6.t1": "À deux", "p6.t2": "Cadeau idéal",
 
-    "gal.label": "Notre institut", "gal.title1": "Un écrin pensé", "gal.title2": "pour s'évader.", "gal.desc": "Cabines feutrées, bois clair, lumière tamisée, senteurs d'eucalyptus. Tout est pensé pour que l'instant soit le vôtre.",
+    "gal.label": "Notre institut", "gal.title1": "Un écrin pensé", "gal.title2": "pour s'évader.", "gal.desc": "Cabines feutrées, bois clair, lumière tamisée, senteurs d'eucalyptus. Tout est pensé pour que l'instant soit le vôtre.", "gal.c1": "Cabine signature", "gal.c2": "Huile chaude", "gal.c3": "Détails parisiens", "gal.c4": "Rituel préparé", "gal.c5": "Lumière douce", "gal.c6": "Geste expert",
 
     "rv.label": "Paroles de clients", "rv.title1": "Ce qu'ils emportent", "rv.title2": "avec eux.", "rv.desc": "Plus de 1 240 évasions partagées depuis 2019. Quelques mots cueillis à la sortie.",
     "rs.l1": "Note moyenne", "rs.l2": "Soins réalisés", "rs.l3": "Clients fidélisés", "rs.l4": "D'expérience",
@@ -84,7 +92,14 @@ window.STRINGS = {
 
     "foot.tag": "A wellness maison in Paris. Hands, intention, a moment.", "foot.navigate": "Explore", "foot.contact": "Contact", "foot.follow": "Follow", "foot.legal": "Legal", "foot.privacy": "Privacy", "foot.rights": "All rights reserved", "foot.cgu": "T&Cs",
 
-    "hero.h1a": "The luxury", "hero.h1b": "of one suspended instant.", "hero.lead": "Bespoke treatments, expert hands — a timeless parenthesis.", "hero.cta1": "Book a treatment", "hero.cta2": "Discover →", "hero.scroll": "Discover",
+    "hero.eyebrow": "Massage Évasion Paris",
+    "hero.h1a": "The luxury", "hero.h1b": "of one suspended", "hero.h1c": "instant.", "hero.lead": "Bespoke treatments, expert hands — a timeless parenthesis.", "hero.cta1": "Book a treatment", "hero.cta2": "Discover →", "hero.scroll": "Discover",
+    "hero.meta1": "Paris 8th",
+    "hero.meta1b": "Studio & home visits",
+    "hero.meta2": "Open",
+    "hero.meta2b": "7 days · 10am — 10pm",
+    "hero.meta3": "Reviews",
+    "hero.meta3b": "4.9/5 clients",
 
     "presta.label": "Services", "presta.title1": "Six treatments,", "presta.title2": "one promise.", "presta.desc": "Each massage is a bespoke ritual. Our certified therapists adjust pressure, oils and rhythm to what your body needs today.", "presta.choose": "Choose this treatment", "presta.discover": "Discover",
 
@@ -95,7 +110,7 @@ window.STRINGS = {
     "p5.title": "Custom Blend", "p5.desc": "You choose intensity, zones and oils. We compose the treatment that suits you.", "p5.t1": "Bespoke", "p5.t2": "Mixed techniques",
     "p6.title": "Duo", "p6.desc": "Two connecting cabins, two therapists. Share the escape — as a couple, or with a friend.", "p6.t1": "For two", "p6.t2": "Perfect gift",
 
-    "gal.label": "Our studio", "gal.title1": "A space designed", "gal.title2": "for escape.", "gal.desc": "Hushed cabins, pale wood, soft light, eucalyptus notes. Everything crafted so the moment becomes yours.",
+    "gal.label": "Our studio", "gal.title1": "A space designed", "gal.title2": "for escape.", "gal.desc": "Hushed cabins, pale wood, soft light, eucalyptus notes. Everything crafted so the moment becomes yours.", "gal.c1": "Signature cabin", "gal.c2": "Warm oil", "gal.c3": "Paris details", "gal.c4": "Prepared ritual", "gal.c5": "Soft light", "gal.c6": "Expert touch",
 
     "rv.label": "Client voices", "rv.title1": "What they take", "rv.title2": "with them.", "rv.desc": "Over 1,240 escapes shared since 2019. A few words gathered at the door.",
     "rs.l1": "Average rating", "rs.l2": "Treatments given", "rs.l3": "Returning clients", "rs.l4": "Years of practice",

@@ -687,7 +687,7 @@
 @media (max-width: 560px) {
   .gallery-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 220px);
+    grid-template-rows: repeat(6, 220px);
   }
 }
 
@@ -728,6 +728,142 @@
 .g-item:focus-within .g-caption {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Galerie éditoriale de l'accueil */
+.gallery-section {
+  background:
+    linear-gradient(180deg, rgba(251,247,239,.96) 0%, rgba(238,242,232,.98) 100%);
+  overflow: hidden;
+}
+
+.gallery-showcase {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: clamp(160px, 15vw, 230px);
+  gap: 14px;
+}
+
+.gallery-tile {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--sand-200);
+  box-shadow: 0 18px 46px -34px rgba(26, 14, 8, .42);
+  isolation: isolate;
+}
+
+.gallery-tile-hero {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+
+.gallery-tile-wide {
+  grid-column: span 6;
+}
+
+.gallery-tile:not(.gallery-tile-hero):not(.gallery-tile-wide) {
+  grid-column: span 3;
+}
+
+.gallery-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 1.4s var(--ease-out), filter .7s ease;
+  filter: saturate(1.03) contrast(1.02);
+}
+
+.gallery-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, transparent 38%, rgba(10, 5, 3, .58) 100%),
+    radial-gradient(120% 90% at 100% 0%, rgba(255, 231, 184, .16), transparent 60%);
+  opacity: .86;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+
+.gallery-tile figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  color: #FFF7E8;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 28px);
+  line-height: 1.1;
+  text-shadow: 0 8px 28px rgba(0,0,0,.45);
+}
+
+.gallery-tile:hover img {
+  transform: scale(1.08);
+  filter: saturate(1.08) contrast(1.05);
+}
+
+.gallery-tile:hover::after { opacity: .98; }
+
+.booking-photo-cta {
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(10,5,3,.82) 0%, rgba(10,5,3,.66) 45%, rgba(10,5,3,.40) 100%),
+    linear-gradient(180deg, rgba(10,5,3,.22), rgba(10,5,3,.86)),
+    url("../images/photos/towels-candles.png") center / cover no-repeat;
+}
+
+.booking-photo-cta::before,
+.booking-photo-cta::after {
+  opacity: .28;
+}
+
+@media (max-width: 980px) {
+  .gallery-showcase {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: clamp(150px, 24vw, 220px);
+  }
+
+  .gallery-tile-hero,
+  .gallery-tile-wide {
+    grid-column: span 6;
+  }
+
+  .gallery-tile:not(.gallery-tile-hero):not(.gallery-tile-wide) {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 620px) {
+  .gallery-showcase {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 12px;
+  }
+
+  .gallery-tile,
+  .gallery-tile-hero,
+  .gallery-tile-wide,
+  .gallery-tile:not(.gallery-tile-hero):not(.gallery-tile-wide) {
+    grid-column: 1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-tile-hero {
+    aspect-ratio: 4 / 5;
+  }
+
+  .booking-photo-cta {
+    min-height: 460px;
+    background-position: 58% center;
+  }
 }
 
 /* ============================================================

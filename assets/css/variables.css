@@ -76,18 +76,18 @@
   --glass-blur:   18px;
 
   /* === ROLES SEMANTIQUES — palette chaude bougie === */
-  --bg:           #FAF1E0;        /* creme bougie */
-  --bg-soft:      #F2E2C2;        /* creme dore */
-  --bg-card:      #FFF8EA;        /* carte luminuse */
-  --bg-elevated:  #FFFCF3;
-  --bg-tinted:    #EFD9B0;
+  --bg:           #FBF7EF;        /* ivoire chaud */
+  --bg-soft:      #EEF2E8;        /* sauge tres clair */
+  --bg-card:      #FFFDF7;        /* carte lumineuse */
+  --bg-elevated:  #FFF9ED;
+  --bg-tinted:    #E7DDC8;
   --ink:          #1A0E08;        /* brun profond photo */
   --ink-soft:     #5C3F2A;        /* brun cafe */
   --ink-muted:    #8E6B52;        /* brun doux */
-  --accent:       var(--gold-500);  /* dore = couleur signature */
-  --accent-soft:  rgba(229, 172, 78, .14);
-  --accent-ink:   #6E4A14;
-  --accent-glow:  rgba(229, 172, 78, .35);
+  --accent:       var(--sage-700);  /* sauge = couleur signature */
+  --accent-soft:  rgba(125, 140, 109, .14);
+  --accent-ink:   var(--sage-900);
+  --accent-glow:  rgba(125, 140, 109, .32);
   --gold:         var(--gold-500);
   --gold-glow:    rgba(229, 172, 78, .38);
   --line:         rgba(26, 14, 8, .08);

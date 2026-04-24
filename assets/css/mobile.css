@@ -140,38 +140,52 @@ img, video, svg, picture {
   }
 
   .hero-cine-inner {
-    width: 100%;
+    width: min(100%, calc(100vw - 40px));
+    max-width: 360px;
     gap: 20px;
+    box-sizing: border-box;
   }
 
   .hero-cine-title {
-    font-size: clamp(34px, 9.5vw, 56px);
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font-size: clamp(31px, 9.2vw, 42px);
     line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  .hero-cine-title .line {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .hero-cine-lead {
     font-size: 15px;
     line-height: 1.6;
     padding: 0 4px;
+    max-width: 300px;
   }
 
   /* CTAs mobile : pleine largeur, empilés */
   .hero-cine-ctas {
     flex-direction: column;
-    width: 100%;
-    max-width: 320px;
+    width: min(100%, 292px);
+    max-width: 292px;
     gap: 10px;
   }
   .hero-cine-ctas .btn {
     width: 100%;
     min-height: var(--tap-target);
+    box-sizing: border-box;
   }
 
-  /* Désactive le zoom infini de la vidéo en mobile (perfs) */
-  .hero-cine-video {
+  /* Réduit le zoom infini de la photo en mobile (perfs) */
+  .hero-cine-media img {
     animation: none !important;
-    transform: scale(1.4) !important;
-    transform-origin: center 60%;
+    transform: scale(1.06) !important;
+    transform-origin: 58% 52%;
   }
 
   /* Halo derrière le titre élargi sur mobile pour mieux contraster */
@@ -187,9 +201,19 @@ img, video, svg, picture {
   }
 
   .hero-cine-meta {
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    gap: 8px 14px;
+    gap: 6px;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-cine-meta .dot { display: none; }
+
+  .hero-cine-meta div {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .hero-cine-scroll {
@@ -529,9 +553,7 @@ img, video, svg, picture {
 
 /* prefers-reduced-data : économie de batterie/data */
 @media (prefers-reduced-data: reduce) {
-  .hero-cine-video {
-    display: none;
-  }
+  .hero-cine-media img { animation: none !important; }
   .hero-cine {
     background: linear-gradient(180deg, #1a1410 0%, #2a1f15 100%);
   }
@@ -575,7 +597,7 @@ html {
    ============================================================ */
 @media print {
   .nav, .nav-mobile, .burger, .wa-float, .back-top,
-  .sticky-mobile-cta, .hero-cine-video, .hero-cine-scroll {
+  .sticky-mobile-cta, .hero-cine-media, .hero-cine-scroll {
     display: none !important;
   }
 }

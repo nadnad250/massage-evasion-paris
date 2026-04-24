@@ -104,7 +104,7 @@
 
     // Above-the-fold immediat
     requestAnimationFrame(() => {
-      document.querySelectorAll('.hero .fade-up, .page-hero .fade-up').forEach(el => {
+      document.querySelectorAll('.hero .fade-up, .hero-cine .fade-up, .page-hero .fade-up').forEach(el => {
         el.classList.add('in');
       });
     });
@@ -272,11 +272,11 @@
   initStatsCounter();
 
   // ============================================================
-  // PARALLAX hero subtil au scroll
+  // PARALLAX hero photo subtil au scroll
   // ============================================================
-  const heroVideo = document.querySelector('.hero-cine-video');
+  const heroMedia = document.querySelector('.hero-cine-media img');
   const heroInner = document.querySelector('.hero-cine-inner');
-  if (heroVideo && heroInner && !reducedMotion) {
+  if (heroMedia && heroInner && !reducedMotion) {
     let parallaxTicking = false;
     window.addEventListener('scroll', () => {
       if (parallaxTicking) return;

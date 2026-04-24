@@ -144,19 +144,26 @@
 
 <!-- ============== HERO CINEMATIC ============== -->
 <section class="hero-cine" aria-label="Hero cinématique">
-  <video class="hero-cine-video"
-         autoplay muted loop playsinline preload="auto"
-         aria-hidden="true">
-    <source src="assets/video/hero.webm" type="video/webm" />
-    <source src="assets/video/hero.mp4" type="video/mp4" />
-  </video>
+  <picture class="hero-cine-media" aria-hidden="true">
+    <img src="assets/images/photos/massage-leg.png"
+         alt=""
+         fetchpriority="high"
+         decoding="async" />
+  </picture>
   <div class="hero-cine-veil" aria-hidden="true"></div>
   <div class="hero-cine-grain" aria-hidden="true"></div>
 
   <div class="hero-cine-inner">
+    <div class="hero-cine-eyebrow fade-up">
+      <span class="hairline" aria-hidden="true"></span>
+      <span data-i18n="hero.eyebrow">Massage Évasion Paris</span>
+      <span class="hairline" aria-hidden="true"></span>
+    </div>
+
     <h1 class="hero-cine-title fade-up d1">
       <span class="line" data-i18n="hero.h1a">Le luxe</span>
-      <span class="line italic" data-i18n="hero.h1b">d'un instant suspendu.</span>
+      <span class="line italic" data-i18n="hero.h1b">d'un instant</span>
+      <span class="line italic" data-i18n="hero.h1c">suspendu.</span>
     </h1>
 
     <p class="hero-cine-lead fade-up d2" data-i18n="hero.lead">
@@ -166,6 +173,14 @@
     <div class="hero-cine-ctas fade-up d3">
       <a href="reservation.html" class="btn btn-gold" data-i18n="hero.cta1">Réserver un soin</a>
       <a href="prestations.html" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir →</a>
+    </div>
+
+    <div class="hero-cine-meta fade-up d4" aria-label="Informations clés">
+      <div><span data-i18n="hero.meta1">Paris 8ᵉ</span><strong data-i18n="hero.meta1b">Institut & domicile</strong></div>
+      <span class="dot" aria-hidden="true">·</span>
+      <div><span data-i18n="hero.meta2">Ouvert</span><strong data-i18n="hero.meta2b">7j/7 · 10h — 22h</strong></div>
+      <span class="dot" aria-hidden="true">·</span>
+      <div><span data-i18n="hero.meta3">Avis</span><strong data-i18n="hero.meta3b">4,9/5 clients</strong></div>
     </div>
   </div>
 
@@ -351,6 +366,51 @@
   </div>
 </section>
 
+<!-- ============== GALERIE PHOTO ============== -->
+<section id="galerie" class="section gallery-section" aria-label="Galerie photo">
+  <div class="wrap">
+    <header class="section-head">
+      <div>
+        <div class="section-label fade-up"><span class="under" data-i18n="gal.label">Notre institut</span></div>
+        <h2 class="section-title fade-up d1">
+          <span data-i18n="gal.title1">Un écrin pensé</span><br />
+          <em data-i18n="gal.title2">pour s'évader.</em>
+        </h2>
+      </div>
+      <p class="section-desc fade-up d2" data-i18n="gal.desc">
+        Cabines feutrées, bois clair, lumière tamisée, senteurs d'eucalyptus. Tout est pensé pour que l'instant soit le vôtre.
+      </p>
+    </header>
+
+    <div class="gallery-showcase">
+      <figure class="gallery-tile gallery-tile-hero fade-up">
+        <img src="assets/images/photos/spa-room.png" alt="Cabine de massage feutrée avec bougies" loading="lazy" />
+        <figcaption data-i18n="gal.c1">Cabine signature</figcaption>
+      </figure>
+      <figure class="gallery-tile fade-up d1">
+        <img src="assets/images/photos/oil-pour.png" alt="Huile chaude versée avant un soin" loading="lazy" />
+        <figcaption data-i18n="gal.c2">Huile chaude</figcaption>
+      </figure>
+      <figure class="gallery-tile fade-up d2">
+        <img src="assets/images/photos/paris-tray.png" alt="Plateau spa avec serviette brodée Paris" loading="lazy" />
+        <figcaption data-i18n="gal.c3">Détails parisiens</figcaption>
+      </figure>
+      <figure class="gallery-tile fade-up">
+        <img src="assets/images/photos/towels-candles.png" alt="Serviettes roulées, bougies et pierres chaudes" loading="lazy" />
+        <figcaption data-i18n="gal.c4">Rituel préparé</figcaption>
+      </figure>
+      <figure class="gallery-tile fade-up d1">
+        <img src="assets/images/photos/sunflower-towel.png" alt="Serviette blanche, tournesols et bougies" loading="lazy" />
+        <figcaption data-i18n="gal.c5">Lumière douce</figcaption>
+      </figure>
+      <figure class="gallery-tile gallery-tile-wide fade-up d2">
+        <img src="assets/images/photos/massage-leg.png" alt="Massage relaxant dans une cabine chaleureuse" loading="lazy" />
+        <figcaption data-i18n="gal.c6">Geste expert</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ============== AVIS ============== -->
 <section class="section bg-soft">
   <div class="wrap">
@@ -395,7 +455,7 @@
 </section>
 
 <!-- ============== CTA RÉSERVATION ============== -->
-<section class="section bg-ink">
+<section class="section bg-ink booking-photo-cta">
   <div class="wrap" style="text-align:center;max-width:720px;">
     <div class="section-label fade-up"><span class="under" data-i18n="bk.label">Réservation</span></div>
     <h2 class="section-title fade-up d1" style="margin-top:24px;">
