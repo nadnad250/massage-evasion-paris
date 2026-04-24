@@ -144,12 +144,18 @@
 
 <!-- ============== HERO CINEMATIC ============== -->
 <section class="hero-cine" aria-label="Hero cinématique">
-  <picture class="hero-cine-media" aria-hidden="true">
-    <img src="assets/images/photos/massage-leg.png"
+  <div class="hero-cine-media" aria-hidden="true">
+    <img class="hero-cine-fallback"
+         src="assets/images/photos/massage-leg.png"
          alt=""
          fetchpriority="high"
          decoding="async" />
-  </picture>
+    <video class="hero-cine-video"
+           autoplay muted loop playsinline preload="auto"
+           poster="assets/images/photos/massage-leg.png">
+      <source src="assets/video/hero-kling-animate.mp4" type="video/mp4" />
+    </video>
+  </div>
   <div class="hero-cine-veil" aria-hidden="true"></div>
   <div class="hero-cine-grain" aria-hidden="true"></div>
 
@@ -362,6 +368,41 @@
           </div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BAND CINEMATIC — Le geste juste ============== -->
+<section class="cine-band" aria-label="Moment cinématique">
+  <div class="cine-band-media">
+    <video class="cine-band-video"
+           autoplay muted loop playsinline preload="metadata"
+           poster="assets/images/photos/oil-pour.png">
+      <source src="assets/video/ritual-closeup.mp4" type="video/mp4" />
+    </video>
+    <div class="cine-band-veil" aria-hidden="true"></div>
+    <div class="cine-band-grain" aria-hidden="true"></div>
+  </div>
+
+  <div class="cine-band-inner wrap">
+    <div class="cine-band-eyebrow fade-up">
+      <span class="hairline"></span>
+      <span data-i18n="cine.eyebrow">Le geste juste</span>
+      <span class="hairline"></span>
+    </div>
+    <blockquote class="cine-band-quote fade-up d1">
+      <span data-i18n="cine.q1">Chaque pression,</span>
+      <em data-i18n="cine.q2">une intention.</em>
+    </blockquote>
+    <p class="cine-band-caption fade-up d2" data-i18n="cine.caption">
+      Huiles tièdes, pressions calibrées, silences choisis. Le soin commence avant même d'entrer en cabine.
+    </p>
+    <div class="cine-band-meta fade-up d3">
+      <span data-i18n="cine.m1">Huiles bio</span>
+      <span class="dot">·</span>
+      <span data-i18n="cine.m2">Praticiens diplômés</span>
+      <span class="dot">·</span>
+      <span data-i18n="cine.m3">Rituel sur mesure</span>
     </div>
   </div>
 </section>

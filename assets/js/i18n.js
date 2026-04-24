@@ -69,6 +69,8 @@ window.STRINGS = {
 
     "gal.label": "Notre institut", "gal.title1": "Un écrin pensé", "gal.title2": "pour s'évader.", "gal.desc": "Cabines feutrées, bois clair, lumière tamisée, senteurs d'eucalyptus. Tout est pensé pour que l'instant soit le vôtre.", "gal.c1": "Cabine signature", "gal.c2": "Huile chaude", "gal.c3": "Détails parisiens", "gal.c4": "Rituel préparé", "gal.c5": "Lumière douce", "gal.c6": "Geste expert",
 
+    "cine.eyebrow": "Le geste juste", "cine.q1": "Chaque pression,", "cine.q2": "une intention.", "cine.caption": "Huiles tièdes, pressions calibrées, silences choisis. Le soin commence avant même d'entrer en cabine.", "cine.m1": "Huiles bio", "cine.m2": "Praticiens diplômés", "cine.m3": "Rituel sur mesure",
+
     "rv.label": "Paroles de clients", "rv.title1": "Ce qu'ils emportent", "rv.title2": "avec eux.", "rv.desc": "Plus de 1 240 évasions partagées depuis 2019. Quelques mots cueillis à la sortie.",
     "rs.l1": "Note moyenne", "rs.l2": "Soins réalisés", "rs.l3": "Clients fidélisés", "rs.l4": "D'expérience",
 
@@ -111,6 +113,8 @@ window.STRINGS = {
     "p6.title": "Duo", "p6.desc": "Two connecting cabins, two therapists. Share the escape — as a couple, or with a friend.", "p6.t1": "For two", "p6.t2": "Perfect gift",
 
     "gal.label": "Our studio", "gal.title1": "A space designed", "gal.title2": "for escape.", "gal.desc": "Hushed cabins, pale wood, soft light, eucalyptus notes. Everything crafted so the moment becomes yours.", "gal.c1": "Signature cabin", "gal.c2": "Warm oil", "gal.c3": "Paris details", "gal.c4": "Prepared ritual", "gal.c5": "Soft light", "gal.c6": "Expert touch",
+
+    "cine.eyebrow": "The right touch", "cine.q1": "Every pressure,", "cine.q2": "an intention.", "cine.caption": "Warm oils, measured pressure, chosen silences. The treatment begins before you even step into the cabin.", "cine.m1": "Organic oils", "cine.m2": "Certified therapists", "cine.m3": "Bespoke ritual",
 
     "rv.label": "Client voices", "rv.title1": "What they take", "rv.title2": "with them.", "rv.desc": "Over 1,240 escapes shared since 2019. A few words gathered at the door.",
     "rs.l1": "Average rating", "rs.l2": "Treatments given", "rs.l3": "Returning clients", "rs.l4": "Years of practice",
