@@ -816,7 +816,7 @@
   background:
     linear-gradient(90deg, rgba(10,5,3,.82) 0%, rgba(10,5,3,.66) 45%, rgba(10,5,3,.40) 100%),
     linear-gradient(180deg, rgba(10,5,3,.22), rgba(10,5,3,.86)),
-    url("../images/photos/towels-candles.png") center / cover no-repeat;
+    url("../images/photos/towels-candles.webp") center / cover no-repeat;
 }
 
 .booking-photo-cta::before,
